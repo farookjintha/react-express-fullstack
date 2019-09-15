@@ -1,16 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { ConnectedTaskList } from './TaskList'
 
 export const Dashboard = ({groups}) => (
     <div>
         <h1>Dashboard</h1>
-        {groups.map(group => (
-            <div>
-                {group.name}
-            </div>
-        )
-        )
+        {
+            groups.map(group => (
+            <ConnectedTaskList id = {group.id} name = {group.name}/>)
+            )
         }
     </div>
 
